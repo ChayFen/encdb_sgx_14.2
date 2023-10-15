@@ -93,10 +93,6 @@ endif
 SHLIB_PREREQS = submake-libpgport
 
 SHLIB_EXPORTS = exports.txt
-SUBDIRS = encryptsql 	
-.NOTPARALLEL: 			
-$(recurse)				
-SHLIB_LINK += -Lencryptsql/build/lib -lencryptsql -lssl
 
 PKG_CONFIG_REQUIRES_PRIVATE = libssl libcrypto
 

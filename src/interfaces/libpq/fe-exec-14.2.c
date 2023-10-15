@@ -1334,8 +1334,6 @@ PQsendQueryContinue(PGconn *conn, const char *query)
 	return PQsendQueryInternal(conn, query, false);
 }
 
-extern const char *encryptOneSql(const char *sql);
-
 static int
 PQsendQueryInternal(PGconn *conn, const char *query, bool newQuery)
 {
@@ -1343,7 +1341,7 @@ PQsendQueryInternal(PGconn *conn, const char *query, bool newQuery)
 
 	if (!PQsendQueryStart(conn, newQuery))
 		return 0;
-	query = encryptOneSql(query);
+
 	/* check the argument */
 	if (!query)
 	{
@@ -2334,7 +2332,7 @@ PQexecStart(PGconn *conn)
 	/* OK to send a command */
 	return true;
 }
-extern void decryptResult(int, int, void *, void **);
+
 /*
  * Common code for PQexec and sibling routines: wait for command result
  */
@@ -2360,7 +2358,6 @@ PQexecFinish(PGconn *conn)
 	{
 		if (lastResult)
 			PQclear(lastResult);
-		decryptResult(result->numAttributes, result->ntups, (void *)result->attDescs, (void **)result->tuples);
 		lastResult = result;
 		if (result->resultStatus == PGRES_COPY_IN ||
 			result->resultStatus == PGRES_COPY_OUT ||

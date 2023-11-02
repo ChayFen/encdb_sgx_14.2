@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "/opt/intel/sgxsdk/include",
+                "/usr/local/pgsql/include",
+                "~/postgresql-9.2.4/src/include",
+                "~/postgresql-9.2.4/src/interfaces/libpq/encryptsql/src/crypto/cryptolib/symmetria",
+                "~/postgresql-9.2.4/src/interfaces/libpq/encryptsql/include",
+                "${workspaceFolder}/src/crypto/cryptolib/libudf/decider",
+                "${workspaceFolder}/src/utils",
+                "/home/postgresql-9.6.24/src/interfaces/libpq/encryptsql/src/crypto/cryptolib/libudf/"
+            ],
+            "defines": [],
+            // "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

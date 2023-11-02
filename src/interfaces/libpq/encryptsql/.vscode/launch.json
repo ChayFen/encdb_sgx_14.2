@@ -1,0 +1,179 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/post/postgresql-14/src/interfaces/libpq/encryptsql/src/crypto/cryptolib/libudf/decider/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "rune",
+            "type": "cppdbg",
+            "request": "launch",
+            // "program": "${workspaceFolder}/build/bin/EnclaveTest",
+            "program": "${workspaceFolder}/build/bin/sqltest",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/bin/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "sgx-gdb",
+            "miDebuggerPath": "/sgx/release/sgxsdk/bin/sgx-gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/EnclaveTest",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/bin/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "CoreDump Post",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/usr/bin/sysbench",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "coreDumpPath": "/tmp/cores/core-sysbench-14785-1647327459-fffff"
+        },
+        {
+            "name": "CoreDump Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            // "program": "/post/postgresql-9.6.24/src/interfaces/libpq/encryptsql/build/bin/sqltest",
+            "program": "/usr/local/pgsql96/bin/postgres",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "coreDumpPath": "/tmp/cores/core-postgres-60032-1647334553-fffff"
+        },
+        {
+            "name": "psql",
+            "type": "cppdbg",
+            "request": "launch",
+            //  /data/lz/postgresql-9.6.20/src/bin/psql/psql --host=10.1.2.104 --username=postgres --dbname=tpcc1  
+            "program": "/usr/local/pgsql96/bin/psql",
+            "args": [
+                "--host=127.0.0.1",
+                // "--username=postgres",
+                // "-Wpostgres",
+                "--dbname=postgres"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "AttachPostgres",
+            "type": "cppdbg",
+            "request": "attach",
+            //  /data/lz/postgresql-9.6.20/src/bin/psql/psql --host=10.1.2.104 --username=postgres --dbname=tpcc1  
+            "program": "/usr/local/pgsql14/bin/postgres",
+            "processId": "116409",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing -gdb-set follow-fork-mode child",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/sgx/release/sgxsdk/bin/sgx-gdb",
+            "sudo":true
+        },
+        {
+            "name": "postgres",
+            "type": "cppdbg",
+            "request": "launch",
+            //  /data/lz/postgresql-9.6.20/src/bin/psql/psql --host=10.1.2.104 --username=postgres --dbname=tpcc1  
+            "program": "/usr/local/pgsql/bin/postgres",
+            "args": [
+                "-D",
+                "~/data"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

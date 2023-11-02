@@ -1,0 +1,21 @@
+enclave {
+    
+    /* Import ECALL/OCALL from sub-directory EDLs.
+     *  [from]: specifies the location of EDL file. 
+     *  [import]: specifies the functions to import, 
+     *  [*]: implies to import all functions.
+     */
+     from "sgx_tstdc.edl" import *;
+    
+    trusted {
+        public size_t ecall_bsearch([in, count=size] int64_t* arr, size_t size, int64_t x);
+        public void ecall_qsort([in, count=size] int64_t* arr, size_t size);
+    };
+
+    /* 
+     * ocall_print_string - invokes OCALL to display string buffer inside the enclave.
+     *  [in]: copy the string buffer to App outside.
+     *  [string]: specifies 'str' is a NULL terminated buffer.
+     */
+
+};

@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/quxiaoyang/Desktop/postgresql_enc/src/interfaces/libpq/encryptsql/src/encryptsql",
+      "program": "/Users/quxiaoyang/Desktop/postgresql_enc/src/interfaces/libpq/encryptsql/src/encryptsql/build/Debug/outDebug"
+    }
+  ]
+}

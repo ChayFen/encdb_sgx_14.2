@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="encdb (7134b914-e260-466f-9f3b-f27923dd15fc)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.ZOLhGuHoqh" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

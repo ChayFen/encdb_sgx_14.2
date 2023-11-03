@@ -268,13 +268,11 @@ bool checkCmd(const char *sql_, bool *Encrypt)
     CppSplitString(sql, v, " ");
     if (v.size() != 2)
         return false;
-        //q:不是小写字母就删除，不知为何
     if (v[1].back() < 97 || v[1].back() > 122)
         v[1].pop_back();
     for (auto &it : v)
-        //q:全转换为小写字母
         transform(it.begin(), it.end(), it.begin(), ::tolower);
-    //q:enc on /off /status 命令判断
+
     if (!v[0].compare("encrypt") || !v[0].compare("enc"))
     {
         if (!v[1].compare("on"))

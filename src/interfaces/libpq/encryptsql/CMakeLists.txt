@@ -4,23 +4,23 @@ set(TARGET encryptsql)
 set(top_builddir ../../..)
 ######################## common settings #############################################
 option(USE_ENCRYPT "Whether to use encrypt function" ON)
-option(TIME_PORTRAIT "Whether to use time portrait" OFF)
+option(TIME_PORTRAIT "Whether to use time portrait" ON)
 
-option(USE_LRU "Whether to use LRU" OFF)
+option(USE_LRU "Whether to use LRU" ON)
 option(USE_SGX "Whether to use SGX" OFF)
 option(SGX_ORE "Whether to use SGX for all ORE calculation" OFF) 
-option(USE_ECALL_BATCH "Whether to use batched ecall" OFF)
+option(USE_ECALL_BATCH "Whether to use batched ecall" ON)
 
 option(USE_SWITCHLESS "Whether to use SGX switchless" OFF)
-option(SGX_MODE "on for hw mode, off for sim mode" OFF)
+option(SGX_MODE "on for hw mode, off for sim mode" ON)
 
 option(SGX_MHE "Whether to use SGX for all MHE calculation" OFF)
 
 set(SGX_SDK /opt/intel/sgxsdk)                  #SDK的安装路径
 set(SGX_ARCH x64)
-# set(SGX_DEBUG 1)
-# set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_BUILD_TYPE "Release")
+set(SGX_DEBUG 1)
+set(CMAKE_BUILD_TYPE "Debug")
+#set(CMAKE_BUILD_TYPE "Release")
 #####################################################################################
 
 set(SGX_COMMON_FLAGS -m64)
@@ -36,6 +36,8 @@ set(SGX_ENCLAVE_SIGNER ${SGX_SDK}/bin/x64/sgx_sign) #以上的参数都是根据
 
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
+#Changed
+add_compile_options(-g)
 
 if(${TIME_PORTRAIT})
     add_definitions(-DTIME_PORTRAIT)
@@ -195,10 +197,12 @@ SET(ORE_Lib ore)
 add_subdirectory(${CryptoLib})
 # add_subdirectory(src/Server)
 
+
+#Changed!!!!!!!!!!!!!!!!1
 if(${CMAKE_BUILD_TYPE} EQUAL "Debug")
     add_subdirectory(tests)
 endif()
-add_subdirectory(tests)
+#add_subdirectory(tests)
 add_library(${TARGET} SHARED ${Files})
 target_link_libraries(${TARGET}  ${OPENSSL_LIBRARIES} ${jsoncpp_LIBRARY})
 target_link_libraries(${TARGET}  ${SYM_Lib})

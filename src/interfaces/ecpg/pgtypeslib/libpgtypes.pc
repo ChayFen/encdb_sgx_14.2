@@ -1,0 +1,9 @@
+Name: libpgtypes
+Description: PostgreSQL libpgtypes library
+Url: https://www.postgresql.org/
+Version: 14.2
+Requires: 
+Requires.private: 
+Cflags: -I/enc_qxy/pgsql142/include
+Libs: -L/enc_qxy/pgsql142/lib -lpgtypes
+Libs.private:  -lpgcommon -lpgport -lm

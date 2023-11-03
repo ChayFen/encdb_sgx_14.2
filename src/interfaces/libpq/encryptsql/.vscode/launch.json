@@ -109,7 +109,7 @@
             "type": "cppdbg",
             "request": "launch",
             //  /data/lz/postgresql-9.6.20/src/bin/psql/psql --host=10.1.2.104 --username=postgres --dbname=tpcc1  
-            "program": "/usr/local/pgsql96/bin/psql",
+            "program": "/enc_qxy/pgsql142/bin/psql",
             "args": [
                 "--host=127.0.0.1",
                 // "--username=postgres",

@@ -202,7 +202,6 @@ MainLoop(FILE *source)
 		}
 
 		count_eof = 0;
-
 		pset.lineno++;
 
 		/* ignore UTF-8 Unicode byte-order mark */

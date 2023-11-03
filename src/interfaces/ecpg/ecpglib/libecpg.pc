@@ -1,0 +1,9 @@
+Name: libecpg
+Description: PostgreSQL libecpg library
+Url: https://www.postgresql.org/
+Version: 14.2
+Requires: 
+Requires.private: libpq libpgtypes
+Cflags: -I/enc_qxy/pgsql142/include
+Libs: -L/enc_qxy/pgsql142/lib -lecpg
+Libs.private:  -lpgcommon -lpgport -lm

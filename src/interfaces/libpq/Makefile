@@ -24,6 +24,7 @@ SO_MINOR_VERSION= $(MAJORVERSION)
 override CPPFLAGS :=  -DFRONTEND -DUNSAFE_STAT_OK -I$(srcdir) $(CPPFLAGS) -I$(top_builddir)/src/port -I$(top_srcdir)/src/port
 ifneq ($(PORTNAME), win32)
 override CFLAGS += $(PTHREAD_CFLAGS)
+override CFLAGS += -g
 endif
 
 # The MSVC build system scrapes OBJS from this file.  If you change any of

@@ -13,7 +13,6 @@ struct EncryptInfo
     bool isFloatCol; //当前处理的col是否是float
     void* father;
     bool isPeerColFloat;    // where col_float = 10;  这种where条件中，10的AES需要放缩， isPeerColFloat为true表示在一个二元操作符中，操作数为float column.
-    //q:左右操作数吗？不确定
-    bool isALeftOps;    
+    bool isALeftOps;
     bool isARightOps;
 };

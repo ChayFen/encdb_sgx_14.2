@@ -105,7 +105,19 @@
         "cfloat": "cpp",
         "ciso646": "cpp",
         "climits": "cpp",
-        "cstdbool": "cpp"
+        "cstdbool": "cpp",
+        "filesystem": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "markdown.preview.fontSize": 8,
+    "chat.editor.fontSize": 8,
+    "terminal.integrated.fontSize": 8,
+    "scm.inputFontSize": 8,
+    "debug.console.fontSize": 8,
+    "editor.fontSize": 8,
+    "debug.autoExpandLazyVariables": true,
+    "debug.console.lineHeight": 0,
+    "debug.inlineValues": "on",
+    "debug.openExplorerOnEnd": false,
+    "debug.showBreakpointsInOverviewRuler": true
 }
